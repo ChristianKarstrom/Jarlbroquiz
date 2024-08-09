@@ -4,22 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const correctAnswers = {
         q1: 'c', // 1% korrekt
         q2: 'a', // Ofärgad plast är lättare att återvinnas
-        q3: 'b', // 45,000 st
+        q3: 'b', // 45 000 st
         q4: 'c', // En blandning av flera syntetiska ämnen
         q5: 'c', // Den bryts aldrig ner
         q6: 'a', // "Glas och gaffel"-symbolen
         q7: 'c', // ca 85%
         q8: 'c'  // 150 kilo
     };
-
-    // Cache DOM elements to optimize performance
-    const quizForm = document.getElementById('quiz-form');
-    const resultDiv = document.getElementById('result');
-    const submitButton = document.getElementById('submit-btn');
-    const questions = document.querySelectorAll('.question');
-    const nextButtons = document.querySelectorAll('.next-btn');
-    const prevButtons = document.querySelectorAll('.prev-btn');
-    const progressBar = document.getElementById('progress');
 
     // Function to highlight the correct answer
     function highlightCorrectAnswer(questionId) {
@@ -55,18 +46,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update progress bar
     function updateProgressBar() {
         const progressPercent = (currentQuestion / totalQuestions) * 100;
-        progressBar.style.width = `${progressPercent}%`;
+        document.getElementById('progress').style.width = `${progressPercent}%`;
     }
 
     // Show the current question
     function showQuestion(questionIndex) {
-        questions.forEach((question, index) => {
+        document.querySelectorAll('.question').forEach((question, index) => {
             question.style.display = (index === questionIndex - 1) ? 'block' : 'none';
         });
     }
 
     // Handle Next Button Clicks
-    nextButtons.forEach(button => {
+    document.querySelectorAll('.next-btn').forEach(button => {
         button.addEventListener('click', function() {
             if (!document.querySelector(`input[name="q${currentQuestion}"]:checked`)) {
                 alert("Please select an answer before moving on.");
@@ -76,32 +67,32 @@ document.addEventListener('DOMContentLoaded', function() {
             updateProgressBar();
             showQuestion(currentQuestion);
             if (currentQuestion === totalQuestions) {
-                submitButton.style.display = 'block';
+                document.getElementById('submit-btn').style.display = 'block';
             }
         });
     });
 
     // Handle Previous Button Clicks
-    prevButtons.forEach(button => {
+    document.querySelectorAll('.prev-btn').forEach(button => {
         button.addEventListener('click', function() {
             currentQuestion = parseInt(this.getAttribute('data-prev'));
             updateProgressBar();
             showQuestion(currentQuestion);
             if (currentQuestion < totalQuestions) {
-                submitButton.style.display = 'none';
+                document.getElementById('submit-btn').style.display = 'none';
             }
         });
     });
 
     // Handle Quiz Submission
-    quizForm.addEventListener('submit', function(event) {
+    document.getElementById('quiz-form').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent the form from submitting the traditional way
 
         let score = 0; // Initialize score
 
         // Loop through each question
         Object.keys(correctAnswers).forEach(question => {
-            let userAnswer = quizForm.querySelector(`input[name="${question}"]:checked`);
+            let userAnswer = document.querySelector(`input[name="${question}"]:checked`);
             if (userAnswer && correctAnswers[question] === userAnswer.value) {
                 score++; // Increment score if the answer is correct
             }
@@ -109,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const totalQuestions = Object.keys(correctAnswers).length; // Get total number of questions
         const result = `Du fick ${score} av ${totalQuestions} rätt`; // Prepare result message in Swedish
-        resultDiv.textContent = result; // Display the result
+        document.getElementById('result').textContent = result; // Display the result
     });
 
     // Initialize the quiz
