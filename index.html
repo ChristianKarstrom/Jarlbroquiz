@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plastkunskaps Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Plastkunskaps Quiz</h1>
+
+        <!-- Introduction -->
+        <p>Välkommen till Plastkunskaps Quiz! Svara på varje fråga genom att välja det bästa alternativet. Du får omedelbar feedback på dina svar. Lycka till!</p>
+        
+        <!-- Progress Indicator -->
+        <div id="progress-bar">
+            <div id="progress"></div>
+        </div>
+        
+        <form id="quiz-form">
+            <!-- Question 1 -->
+            <div class="question" id="question-1">
+                <img src="images/question1.jpg" alt="Fråga 1 Bild" class="question-image">
+                <p class="question-text">Hur många procent av alla plastprodukter i världen är gjord av återvunnen plast?</p>
+                <label><input type="radio" name="q1" value="a"> 90%</label><br>
+                <label><input type="radio" name="q1" value="b"> 25%</label><br>
+                <label><input type="radio" name="q1" value="c"> 1%</label>
+                <div class="fact" id="fact-q1" style="display:none;">
+                    <p>Bara 1% av all plast som tillverkas är återvunnen, vilket är en mycket liten del av den totala plastproduktionen.</p>
+                </div>
+                <div class="nav-buttons">
+                    <button type="button" class="next-btn" data-next="2" style="display:none;">></button>
+                </div>
+            </div>
+
+           <!-- Question 2 -->
+           <div class="question" id="question-2" style="display:none;">
+            <img src="images/question2.jpg" alt="Fråga 2 Bild" class="question-image">
+            <p class="question-text">Vad är skillnaden i miljöpåverkan mellan färgad och ofärgad plast?</p>
+            <label><input type="radio" name="q2" value="a"> Ofärgad plast är lättare att återvinnas</label><br>
+            <label><input type="radio" name="q2" value="b"> Färgad plast är lättare att återvinnas</label><br>
+            <label><input type="radio" name="q2" value="c"> Båda är bra på att återvinnas</label>
+            <div class="fact" id="fact-q2" style="display:none;">
+                <p>Ofärgad plast är lättare att återvinnas eftersom den inte behöver bearbetas för att avlägsna färgämnen, vilket gör den mer mångsidig vid återanvändning.</p>
+            </div>
+            <div class="nav-buttons">
+                <button type="button" class="prev-btn" data-prev="1"><</button>
+                <button type="button" class="next-btn" data-next="3" style="display:none;">></button>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question" id="question-3" style="display:none;">
+            <img src="images/question3.jpg" alt="Fråga 3 Bild" class="question-image">
+            <p class="question-text">År 2019 producerades 460 miljoner ton plast i världen. Om man skulle bygga Eiffeltorn av det, hur många skulle det då bli?</p>
+            <label><input type="radio" name="q3" value="a"> 300 000 st</label><br>
+            <label><input type="radio" name="q3" value="b"> 45 000 st</label><br>
+            <label><input type="radio" name="q3" value="c"> 20 000 st</label>
+            <div class="fact" id="fact-q3" style="display:none;">
+                <p>Den mängd plast som producerades 2019 motsvarar ungefär 45 000 Eiffeltorn, vilket belyser den enorma mängden plast som tillverkas globalt.</p>
+            </div>
+            <div class="nav-buttons">
+                <button type="button" class="prev-btn" data-prev="2"><</button>
+                <button type="button" class="next-btn" data-next="4" style="display:none;">></button>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question" id="question-4" style="display:none;">
+            <img src="images/question4.jpg" alt="Fråga 4 Bild" class="question-image">
+            <p class="question-text">Vad är plast?</p>
+            <label><input type="radio" name="q4" value="a"> Ett grundämne</label><br>
+            <label><input type="radio" name="q4" value="b"> Ett ämne som finns naturligt</label><br>
+            <label><input type="radio" name="q4" value="c"> En blandning av flera syntetiska ämnen</label>
+            <div class="fact" id="fact-q4" style="display:none;">
+                <p>Plast är en blandning av flera olika syntetiska ämnen, så kallade polymerer. De flesta plaster tillverkas fortfarande av fossila bränslen, med cirka 98% som baseras på fossil olja.</p>
+            </div>
+            <div class="nav-buttons">
+                <button type="button" class="prev-btn" data-prev="3"><</button>
+                <button type="button" class="next-btn" data-next="5" style="display:none;">></button>
+            </div>
+        </div>
+
+         <!-- Question 5 -->
+         <div class="question" id="question-5" style="display:none;">
+            <img src="images/question5.jpg" alt="Fråga 5 Bild" class="question-image">
+            <p class="question-text">Hur lång tid tar det för plast att brytas ner i naturen?</p>
+            <label><input type="radio" name="q5" value="a"> 50 år</label><br>
+            <label><input type="radio" name="q5" value="b"> 100 år</label><br>
+            <label><input type="radio" name="q5" value="c"> Den bryts aldrig ner</label>
+            <div class="fact" id="fact-q5" style="display:none;">
+                <p>Plast, oavsett om den är tillverkad av förnybar eller fossil råvara, bryts inte ner fullständigt i den naturliga miljön under överskådlig tid. Därför är korrekt avfallshantering och återvinning viktigt.</p>
+            </div>
+            <div class="nav-buttons">
+                <button type="button" class="prev-btn" data-prev="4"><</button>
+                <button type="button" class="next-btn" data-next="6" style="display:none;">></button>
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question" id="question-6" style="display:none;">
+            <img src="images/question6.jpg" alt="Fråga 6 Bild" class="question-image">
+            <p class="question-text">Vilken symbol visar att plastmaterialet är okej att använda i livsmedelsförpackningar?</p>
+            <label><input type="radio" name="q6" value="a"> "Glas och gaffel"-symbolen</label><br>
+            <label><input type="radio" name="q6" value="b"> Varningstriangel-symbolen</label><br>
+            <label><input type="radio" name="q6" value="c"> Diskmaskinssymbolen</label>
+            <div class="fact" id="fact-q6" style="display:none;">
+                <p>"Glas och gaffel"-symbolen visar att plasten är säker att använda för livsmedelsförpackningar. Kontrollera alltid märkningen innan du använder plast i mikrovågsugnen.</p>
+            </div>
+            <div class="nav-buttons">
+                <button type="button" class="prev-btn" data-prev="5"><</button>
+                <button type="button" class="next-btn" data-next="7" style="display:none;">></button>
+            </div>
+        </div>
+        
+        <!-- Question 7 (continued) -->
+        <div class="question" id="question-7" style="display:none;">
+            <img src="images/question7.jpg" alt="Fråga 7 Bild" class="question-image">
+            <p class="question-text">Hur många procent av vårt skräp på stränderna i Europa är plast?</p>
+            <label><input type="radio" name="q7" value="a"> ca 20%</label><br>
+            <label><input type="radio" name="q7" value="b"> ca 53%</label><br>
+            <label><input type="radio" name="q7" value="c"> ca 85%</label>
+            <div class="fact" id="fact-q7" style="display:none;">
+                <p>Plast utgör en betydande del av skräpet på stränder i Europa, med uppskattningar som anger att upp till 85% av det marina skräpet är plast.</p>
+            </div>
+            <div class="nav-buttons">
+                <button type="button" class="prev-btn" data-prev="6"><</button>
+                <button type="button" class="next-btn" data-next="8" style="display:none;">></button>
+            </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question" id="question-8" style="display:none;">
+            <img src="images/question8.jpg" alt="Fråga 8 Bild" class="question-image">
+            <p class="question-text">Hur många kilo plast förbrukar vi i Sverige per person?</p>
+            <label><input type="radio" name="q8" value="a"> 25 kilo</label><br>
+            <label><input type="radio" name="q8" value="b"> 50 kilo</label><br>
+            <label><input type="radio" name="q8" value="c"> 150 kilo</label>
+            <div class="fact" id="fact-q8" style="display:none;">
+                <p>Den genomsnittliga plastförbrukningen per person i Sverige är cirka 150 kilo per år, vilket är betydligt högre än vad många tror.</p>
+            </div>
+            <div class="nav-buttons">
+                <button type="button" class="prev-btn" data-prev="7"><</button>
+                <button type="submit" id="submit-btn" style="display:none;">✔</button>
+            </div>
+        </div>
+    </form>
+    <div id="result"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
